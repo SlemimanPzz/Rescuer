@@ -65,10 +65,10 @@ fn main() {
     let desktop_dir = dirs::desktop_dir().unwrap();
     let key_file_path = desktop_dir.join("decrypt.txt");
     if !key_file_path.exists(){
-        println!("No key found")
+        println!("No key found");
+        return;
     } else {
         println!("{:?}", fs::read_to_string(key_file_path.clone()));
-        return;
     }
     println!("If the the key is incorrect to rescue will be executed, press enter");
     let mut input = String::new();
