@@ -66,7 +66,7 @@ fn main() {
     let desktop_dir = dirs::desktop_dir().unwrap();
     let key_file_path = desktop_dir.join("decrypt.txt");
     if !key_file_path.exists(){
-        println!("NO key found")
+        println!("No key found")
     } else {
         println!("{:?}", fs::read_to_string(key_file_path.clone()));
         return;
